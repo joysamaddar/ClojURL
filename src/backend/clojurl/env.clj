@@ -3,7 +3,7 @@
 
 (def env-vars 
   (if (.exists (clojure.java.io/file "env.edn")) 
-    (clojure./read-string (slurp "env.edn"))
+    (clojure.edn/read-string (slurp "env.edn"))
     {}))
 
 (defn env [k]
